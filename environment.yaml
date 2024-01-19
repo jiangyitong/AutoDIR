@@ -39,4 +39,4 @@ dependencies:
     - git+https://github.com/crowsonkb/k-diffusion.git
     - open-clip-torch==2.20.0
     - openai==0.27.2
-    -lmdb==1.4.1
+    - lmdb==1.4.1
