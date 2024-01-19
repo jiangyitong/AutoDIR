@@ -22,6 +22,7 @@ conda env create -f environment.yaml
 conda activate autodir
 cd NAFNet
 python setup.py develop --no_cuda_ext
+pip install git+https://github.com/openai/consistencydecoder.git
 ```
 
 ## Updates
