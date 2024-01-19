@@ -6,7 +6,7 @@ https://github.com/CompVis/taming-transformers
 -- merci
 """
 
-# File modified by authors of InstructPix2Pix from original (https://github.com/CompVis/stable-diffusion).
+# File modified by authors of AutoDIR from original (https://github.com/timothybrooks/instruct-pix2pix).
 # See more details in LICENSE.
 
 import torch

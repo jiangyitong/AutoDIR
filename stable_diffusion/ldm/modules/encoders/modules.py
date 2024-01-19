@@ -150,9 +150,6 @@ class FrozenCLIPEmbedder(AbstractEncoder):
             param.requires_grad = False
 
     def forward(self, text):
-        # model_ckpt = torch.load('C:\\Users\LittleMigina\workspace\instruct-pix2pix\checkpoints/largeclip_softmax_needreduction.ckpt')
-        # self.transformer.load_state_dict(model_ckpt, strict=False)
-        # self.transformer = CLIPTextModel.from_pretrained("openai/clip-vit-large-patch14")
         batch_encoding = self.tokenizer(text, truncation=True, max_length=self.max_length, return_length=True,
                                         return_overflowing_tokens=False, padding="max_length", return_tensors="pt")
         tokens = batch_encoding["input_ids"].to(self.device)

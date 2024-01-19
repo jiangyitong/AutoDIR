@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import glob
 import math
 import os
 import random
@@ -66,15 +65,6 @@ def load_model_from_config(config, ckpt, verbose=False):
     if "global_step" in pl_sd:
         print(f"Global Step: {pl_sd['global_step']}")
     sd = pl_sd["state_dict"]
-    # if vae_ckpt is not None:
-    #     print(f"Loading VAE from {vae_ckpt}")
-    #     vae_sd = torch.load(vae_ckpt, map_location="cpu")["state_dict"]
-    #     sd = {
-    #         k:
-    #             vae_sd[k[len("first_stage_model."):]]
-    #             if k.startswith("first_stage_model.") else v
-    #         for k, v in sd.items()
-    #     }
     model = instantiate_from_config(config.model)
     m, u = model.load_state_dict(sd, strict=True)
     if len(m) > 0 and verbose:
@@ -109,8 +99,6 @@ def predict_logit(x, text, model):
 
     print(f"A photo needs {artifact_category[main_artifact_index]} artifact reduction")
 
-    print(artifact_category, logits_distortion_gumbel)
-
     main_artifact = artifact_category.pop(main_artifact_index)
 
     return logits_distortion_gumbel, text_arg, main_artifact
@@ -118,21 +106,21 @@ def predict_logit(x, text, model):
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument("--resolution", default=512, type=int)
+    parser.add_argument("--resolution", default=768, type=int)
     parser.add_argument("--need-resize", action='store_true')
-    parser.add_argument("--need-crop", action='store_true')
+    parser.add_argument("--color-correct", action='store_true')
     parser.add_argument("--customize", default=None, type=str)
     parser.add_argument("--steps", default=100, type=int)
     parser.add_argument("--config", default="configs/generate.yaml", type=str)
     parser.add_argument("--ckpt",
-                        default="checkpoints/instruct-pix2pix-00-22000.ckpt",
+                        default="checkpoints/autodir.ckpt",
                         type=str)
     parser.add_argument("--input", required=True, type=str)
     parser.add_argument("--gt", required=False, type=str)
     parser.add_argument("--output", required=True, type=str)
     parser.add_argument("--decoder-consistency", action='store_true')
-    parser.add_argument("--cfg-text", default=7.5, type=float)
-    parser.add_argument("--cfg-image", default=1.5, type=float)
+    parser.add_argument("--cfg-text", default=1.0, type=float)
+    parser.add_argument("--cfg-image", default=1.0, type=float)
     parser.add_argument("--seed", type=int)
     args = parser.parse_args()
 
@@ -236,12 +224,12 @@ def main():
                 cond["c_crossattn"] = [customize_token]
             else:
                 joint_texts = [f"A photo needs {d} artifact reduction" for d in artifact_category]
-                logits_per_image, text_arg, main_artifact = predict_logit(input_image,  ####edit
+                logits_per_image, text_arg, main_artifact = predict_logit(input_image,
                                                                           joint_texts,
                                                                           model.model_assessment)
                 cond["c_crossattn"] = [text_arg]
                 if main_artifact == 'no':
-                    print("End of the Image Restoration Process.")
+                    print("No artifact detected. End of the Image Restoration Process.")
                     break
             uncond = {}
             uncond["c_crossattn"] = [null_token]
@@ -268,14 +256,15 @@ def main():
                 x = model.decode_first_stage(z)
             recon_stack = torch.cat((input_image, x), dim=1)
             result = model.NAFNet(recon_stack)
-
-            correct_stable = adaptive_instance_normalization(x, input_image)
-            correct_final = adaptive_instance_normalization(
-                result, input_image)
-            if main_artifact == 'low resolution':
-                input_image = x
-            else:
-                input_image = result
+            if args.color_correct:
+                correct_stable = adaptive_instance_normalization(x, input_image)
+                correct_final = adaptive_instance_normalization(
+                    result, input_image)
+            if not args.customize:
+                if main_artifact == 'low resolution':
+                    input_image = x
+                else:
+                    input_image = result
 
             x = torch.clamp((x + 1.0) / 2.0, min=0.0, max=1.0)
             x = 255.0 * rearrange(x, "1 c h w -> h w c")
@@ -287,21 +276,22 @@ def main():
             edited_image_final = Image.fromarray(
                 result.type(torch.uint8).cpu().numpy())
 
-            correct_stable = torch.clamp((correct_stable + 1.0) / 2.0,
-                                         min=0.0,
-                                         max=1.0)
-            correct_stable = 255.0 * rearrange(correct_stable,
-                                               "1 c h w -> h w c")
-            correct_stable = Image.fromarray(
-                correct_stable.type(torch.uint8).cpu().numpy())
+            if args.color_correct:
+                correct_stable = torch.clamp((correct_stable + 1.0) / 2.0,
+                                             min=0.0,
+                                             max=1.0)
+                correct_stable = 255.0 * rearrange(correct_stable,
+                                                   "1 c h w -> h w c")
+                correct_stable = Image.fromarray(
+                    correct_stable.type(torch.uint8).cpu().numpy())
 
-            correct_final = torch.clamp((correct_final + 1.0) / 2.0,
-                                        min=0.0,
-                                        max=1.0)
-            correct_final = 255.0 * rearrange(correct_final,
-                                              "1 c h w -> h w c")
-            correct_final = Image.fromarray(
-                correct_final.type(torch.uint8).cpu().numpy())
+                correct_final = torch.clamp((correct_final + 1.0) / 2.0,
+                                            min=0.0,
+                                            max=1.0)
+                correct_final = 255.0 * rearrange(correct_final,
+                                                  "1 c h w -> h w c")
+                correct_final = Image.fromarray(
+                    correct_final.type(torch.uint8).cpu().numpy())
 
             edited_image.save(
                 os.path.join(args.output, name +'_step_'+str(step_number)+ '_result.png'))
@@ -310,12 +300,13 @@ def main():
             if args.gt:
                 gt.save(
                     os.path.join(args.output, name +'_step_'+str(step_number)+ '_gt.png'))
-            # input_image_save.save(
-            #     os.path.join(args.output, name +'_step_'+str(step_number)+ '_input.png'))
-            # correct_stable.save(
-            #     os.path.join(args.output, name +'_step_'+str(step_number)+ '_result_colorcorrect.png'))
-            # correct_final.save(
-            #     os.path.join(args.output, name +'_step_'+str(step_number)+ '_result_w_SCM_colorcorrect.png'))
+            input_image_save.save(
+                os.path.join(args.output, name +'_step_'+str(step_number)+ '_input.png'))
+            if args.color_correct:
+                correct_stable.save(
+                    os.path.join(args.output, name +'_step_'+str(step_number)+ '_result_colorcorrect.png'))
+                correct_final.save(
+                    os.path.join(args.output, name +'_step_'+str(step_number)+ '_result_w_SCM_colorcorrect.png'))
 
 
 if __name__ == "__main__":
