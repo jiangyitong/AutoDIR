@@ -1,0 +1,41 @@
+# File modified by authors of AutoDIR from original (https://github.com/timothybrooks/instruct-pix2pix).
+# See more details in LICENSE.
+
+name: autodir
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.8.5
+  - pip=20.3.3
+  - cudatoolkit=11.3.1
+  - pytorch=2.1.1=py3.8_cuda12.1_cudnn8_0
+  - torchvision=0.16.1
+  - numpy=1.24.3
+  - pip:
+    - albumentations==0.4.3
+    - datasets==2.8.0
+    - diffusers==0.14.0
+    - opencv-python==4.1.2.30
+    - pudb==2019.2
+    - invisible-watermark
+    - imageio==2.9.0
+    - imageio-ffmpeg==0.4.2
+    - pytorch-lightning==1.4.2
+    - omegaconf==2.1.1
+    - test-tube>=0.7.5
+    - streamlit==1.20.0
+    - einops==0.3.0
+    - torch-fidelity==0.3.0
+    - transformers==4.28.1
+    - torchmetrics==0.6.0
+    - kornia==0.6
+    - -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers
+    - -e git+https://github.com/openai/CLIP.git@main#egg=clip
+    - openai==0.27.2
+    - openai-clip==1.0.1
+    - gradio
+    - seaborn
+    - git+https://github.com/crowsonkb/k-diffusion.git
+    - open-clip-torch==2.20.0
+    - openai==0.27.2
