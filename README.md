@@ -26,8 +26,8 @@ pip install git+https://github.com/openai/consistencydecoder.git
 ```
 
 ## Updates
-- **2023.05.13**: Add Colab demo of AutoDIR. <a href="https://colab.research.google.com/drive/1tnBnBOSUqJvLqJqG1rWM_R0L6qc1UtW9?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>
-- **2023.05.11**: Inference code and [pre-trained models](https://drive.google.com/drive/folders/1hVUyHY9FOUsEpFhPQPHmyd8diDNThqaU?usp=sharing) are released.
+- **2023.01.19**: Add Colab demo of AutoDIR. <a href="https://colab.research.google.com/drive/1tnBnBOSUqJvLqJqG1rWM_R0L6qc1UtW9?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>
+- **2024.01.19**: Inference code and [pre-trained models](https://drive.google.com/drive/folders/1hVUyHY9FOUsEpFhPQPHmyd8diDNThqaU?usp=sharing) are released.
 
 ### TODO
 - [ ] With Latent-Consistency-model
