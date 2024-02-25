@@ -62,21 +62,21 @@ test_images\unknown.png
 "configs/generate.yaml"
 ```
 #### Example of multiple unknown artifacts
-![examply of multiple artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/multiple.png?raw=true)
+![examply of multiple artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/multiple.png?token=GHSAT0AAAAAACOWBWUGNG5UUOXR3HODMWJ2ZO2YVAA)
 #### Example of low-resolution artifact
-![examply of low-resolution artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/sr.png?raw=true)
+![examply of low-resolution artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/sr.png?token=GHSAT0AAAAAACOWBWUH3Y4XEEIFMWQGGKDEZO2YV5A)
 #### Example of blur artifact
-![examply of blur artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/blur.png?raw=true)
+![examply of blur artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/blur.png?token=GHSAT0AAAAAACOWBWUGGV27IRUDDGEPDFMGZO2YWEQ)
 #### Example of noise artifact
-![examply of noise artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/noise.png?raw=true)
+![examply of noise artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/noise.png?token=GHSAT0AAAAAACOWBWUGMNU7EQ3HZ3WP5T3SZO2YUMQ)
 #### Example of raindrop artifact
-![examply of raindrop artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/raindrop.png?raw=true)
+![examply of raindrop artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/raindrop.png?token=GHSAT0AAAAAACOWBWUHMJM3DEBQ5NL2QTAWZO2YWMQ)
 #### Example of rain artifact
-![examply of rain artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/rain.png?raw=true)
+![examply of rain artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/rain.png?token=GHSAT0AAAAAACOWBWUGWLZTAYFZB2DOXVF4ZO2YWSA)
 #### Example of haze artifact
-![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/haze.png?raw=true)
+![examply of haze artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/haze.png?token=GHSAT0AAAAAACOWBWUGR5463R2I55M6AFPEZO2YW3A)
 #### Example of underexposure artifact
-![examply of underexposure artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/lol.png?raw=true)
+![examply of underexposure artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/lol.png?token=GHSAT0AAAAAACOWBWUG56ELQMDRH3IT56EWZO2YXAA)
 
 
 #### User-customized image restoration
@@ -98,7 +98,7 @@ test_images\noise.png
 "configs/generate.yaml"
 ```
 #### Example of user-customized image restoration
-![examply of user-customized artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/user_customize.png?raw=true)
+![examply of user-customized artifacts](https://raw.githubusercontent.com/jiangyitong/autodir_test/main/figs/user_customize.png?token=GHSAT0AAAAAACOWBWUGBSU3P2EBKR4ZV67QZO2YXHQ)
 
 **Result structure:**
 
