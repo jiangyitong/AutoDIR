@@ -76,7 +76,7 @@ test_images\unknown.png
 #### Example of haze artifact
 ![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/haze.png?raw=true)
 #### Example of underexposure artifact
-![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/lol.png?raw=true)
+![examply of underexposure artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/lol.png?raw=true)
 
 
 #### User-customized image restoration
@@ -98,7 +98,7 @@ test_images\noise.png
 "configs/generate.yaml"
 ```
 #### Example of user-customized image restoration
-![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/user_customize.png?raw=true)
+![examply of user-customized artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/user_customize.png?raw=true)
 
 **Result structure:**
 
