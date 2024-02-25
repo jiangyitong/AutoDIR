@@ -62,21 +62,21 @@ test_images\unknown.png
 "configs/generate.yaml"
 ```
 #### Example of multiple unknown artifacts
-![examply of multiple artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/multiple.png)
+![examply of multiple artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/multiple.png?raw=true)
 #### Example of low-resolution artifact
-![examply of low-resolution artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/sr.png)
+![examply of low-resolution artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/sr.png?raw=true)
 #### Example of blur artifact
-![examply of blur artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/blur.png)
+![examply of blur artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/blur.png?raw=true)
 #### Example of noise artifact
-![examply of noise artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/noise.png)
+![examply of noise artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/noise.png?raw=true)
 #### Example of raindrop artifact
-![examply of raindrop artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/raindrop.png)
+![examply of raindrop artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/raindrop.png?raw=true)
 #### Example of rain artifact
-![examply of rain artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/rain.png)
+![examply of rain artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/rain.png?raw=true)
 #### Example of haze artifact
-![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/haze.png)
+![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/haze.png?raw=true)
 #### Example of underexposure artifact
-![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/lol.png)
+![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/lol.png?raw=true)
 
 
 #### User-customized image restoration
