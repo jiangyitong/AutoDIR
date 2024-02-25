@@ -98,7 +98,7 @@ test_images\noise.png
 "configs/generate.yaml"
 ```
 #### Example of user-customized image restoration
-![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/user_customize.png)
+![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/user_customize.png?raw=true)
 
 **Result structure:**
 
