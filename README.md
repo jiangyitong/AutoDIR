@@ -62,21 +62,21 @@ test_images\unknown.png
 "configs/generate.yaml"
 ```
 #### Example of multiple unknown artifacts
-![examply of multiple artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/multiple.png?raw=true)
+![examply of multiple artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/multiple.png?raw=true)
 #### Example of low-resolution artifact
-![examply of low-resolution artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/sr.png?raw=true)
+![examply of low-resolution artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/sr.png?raw=true)
 #### Example of blur artifact
-![examply of blur artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/blur.png?raw=true)
+![examply of blur artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/blur.png?raw=true)
 #### Example of noise artifact
-![examply of noise artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/noise.png?raw=true)
+![examply of noise artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/noise.png?raw=true)
 #### Example of raindrop artifact
-![examply of raindrop artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/raindrop.png?raw=true)
+![examply of raindrop artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/raindrop.png?raw=true)
 #### Example of rain artifact
-![examply of rain artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/rain.png?raw=true)
+![examply of rain artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/rain.png?raw=true)
 #### Example of haze artifact
-![examply of haze artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/haze.png?raw=true)
+![examply of haze artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/haze.png?raw=true)
 #### Example of underexposure artifact
-![examply of underexposure artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/lol.png?raw=true)
+![examply of underexposure artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/lol.png?raw=true)
 
 
 #### User-customized image restoration
@@ -98,7 +98,7 @@ test_images\noise.png
 "configs/generate.yaml"
 ```
 #### Example of user-customized image restoration
-![examply of user-customized artifacts](https://github.com/jiangyitong/autodir_test/blob/main/figs/user_customize.png?raw=true)
+![examply of user-customized artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/user_customize.png?raw=true)
 
 **Result structure:**
 
