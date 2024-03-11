@@ -128,7 +128,7 @@ class NAFNet_Combine(NAFNet):
 
         # weight of SCM
         weight = 1
-        x = x + weight * inp[:, 3:6, :, :]
+        x = x * weight + inp[:, 3:6, :, :]
 
         return x[:, :, :H, :W]
 
