@@ -62,7 +62,7 @@ test_images\unknown.png
 "configs/generate.yaml"
 ```
 #### Example of open-vocabulary user control
-![examply of multiple artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/user_control.png?raw=true)
+![examply of open-vocabulary user control](https://github.com/jiangyitong/AutoDIR/blob/main/figs/user_control.png?raw=true)
 #### Example of multiple unknown artifacts
 ![examply of multiple artifacts](https://github.com/jiangyitong/AutoDIR/blob/main/figs/multiple.png?raw=true)
 #### Example of low-resolution artifact
