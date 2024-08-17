@@ -3,7 +3,9 @@
 #### Yitong Jiang, Zhaoyang Zhang, Tianfan Xue, Jinwei Gu
 
 The official PyTorch implementation of the paper **[AutoDIR: Automatic All-in-One Image Restoration with Latent Diffusion]**
-News: Accepted by ECCV
+
+News: Accepted by ECCV2024
+
 | [Github](https://github.com/jiangyitong/AutoDIR) |  [Page](https://jiangyitong.github.io/AutoDIR_webpage/) |  [Arxiv](https://arxiv.org/abs/2310.10123) | 
 
 <a href="https://colab.research.google.com/drive/1tnBnBOSUqJvLqJqG1rWM_R0L6qc1UtW9?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>
