@@ -5,7 +5,7 @@
 The official PyTorch implementation of the paper **[AutoDIR: Automatic All-in-One Image Restoration with Latent Diffusion]**
 
 | [Github](https://github.com/jiangyitong/AutoDIR) |  [Page](https://jiangyitong.github.io/AutoDIR_webpage/) |  [Arxiv](https://arxiv.org/abs/2310.10123) | 
-
+News: Accepted by ECCV
 <a href="https://colab.research.google.com/drive/1tnBnBOSUqJvLqJqG1rWM_R0L6qc1UtW9?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="google colab logo"></a>
 
 We propose an all-in-one image restoration system with latent diffusion, named AutoDIR, which can automatically detect and restore images with multiple unknown degradations. 
