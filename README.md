@@ -4,7 +4,7 @@
 
 The official PyTorch implementation of the paper **[AutoDIR: Automatic All-in-One Image Restoration with Latent Diffusion]**
 
-News: Accepted by ECCV2024
+## News: Accepted by ECCV2024
 
 | [Github](https://github.com/jiangyitong/AutoDIR) |  [Page](https://jiangyitong.github.io/AutoDIR_webpage/) |  [Arxiv](https://arxiv.org/abs/2310.10123) | 
 
